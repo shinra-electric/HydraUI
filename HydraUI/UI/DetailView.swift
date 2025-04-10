@@ -14,7 +14,7 @@ struct DetailView: View {
         if let state = selection {
             switch state {
             case .nowPlaying:
-                EmptyView()
+                NowPlayingView()
             case .gamelist:
                 GameListView()
             case .savestates:

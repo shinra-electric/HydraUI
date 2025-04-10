@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection: SidebarSelectionState? = .gamelist
-//    @State var searchText = ""
 
     var body: some View {
         NavigationSplitView(sidebar: {
@@ -17,7 +16,6 @@ struct ContentView: View {
         }, detail: {
             DetailView(selection: $selection)
         })
-//        .searchable(text: $searchText, placement: .sidebar, prompt: Text("Search"))
         .toolbar {
             ToolbarItems()
         }
