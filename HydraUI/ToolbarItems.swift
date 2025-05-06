@@ -16,6 +16,7 @@ struct ToolbarItems: ToolbarContent {
             Button("Open File", systemImage: "plus.app") {
                 isFilePickerPresented.toggle()
             }
+            // TODO: change allowedContentTypes to nsp etc
             .fileImporter(isPresented: $isFilePickerPresented, allowedContentTypes: [.data], allowsMultipleSelection: false) { result in
                 switch result {
                 case .success(let fileurls):

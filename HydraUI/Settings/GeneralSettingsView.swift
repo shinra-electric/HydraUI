@@ -7,11 +7,23 @@
 import SwiftUI
 
 struct GeneralSettingsView: View {
+    @AppStorage("showPreview") private var showPreview = true
+    @AppStorage("gameDirectories") private var gameDirectories: [URL] = []
+    @AppStorage("rootPaths") private var rootPaths: [URL] = []
+    
     var body: some View {
-        Text("General Settings")
+        Form {
+            Toggle("Show Previews", isOn: $showPreview)
+            Text("Game Directories")
+            
+            
+            Text("Homebrew Root Paths")
+            
+        }
     }
 }
 
+
 #Preview {
-    GeneralSettingsView()
+    SettingsView()
 }

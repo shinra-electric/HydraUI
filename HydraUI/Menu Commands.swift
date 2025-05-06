@@ -12,21 +12,20 @@ struct MenuCommands: Commands {
     var body: some Commands {
         // Adds a new command to the File menu
         CommandGroup(after: .newItem) {
-            Button("Reset Console") {
+            Button("Add to Library") {
 
             }
-            .keyboardShortcut(KeyEquivalent("r"), modifiers: /*@START_MENU_TOKEN@*/.command/*@END_MENU_TOKEN@*/)
+            .keyboardShortcut(KeyEquivalent("o"), modifiers: /*@START_MENU_TOKEN@*/.command/*@END_MENU_TOKEN@*/)
         }
-
-        // This is an example of removing menu items, in this case from the help menu
+        
+        // This removes/replaces menu items
         CommandGroup(replacing: CommandGroupPlacement.help) {}
+        CommandGroup(replacing: CommandGroupPlacement.pasteboard) {}
+        CommandGroup(replacing: CommandGroupPlacement.systemServices) {}
+        CommandGroup(replacing: CommandGroupPlacement.undoRedo) {}
 
         // Add the show/hide sidebar command and shortcut to the menu
         SidebarCommands()
-        // Add extra text editing commands to the menu
-        TextEditingCommands()
-        // Add text formatting commands to the menu
-        // Commented out for now, but might be useful in the future
-        // TextFormattingCommands()
+
     }
 }

@@ -7,24 +7,19 @@
 import SwiftUI
 
 struct SettingsView: View {
-    private enum Tabs: Hashable {
-        case general, advanced
-    }
+
     var body: some View {
         TabView {
-            GeneralSettingsView()
-                .tabItem {
-                    Label("General", systemImage: "gear")
-                }
-                .tag(Tabs.general)
-            AdvancedSettingsView()
-                .tabItem {
-                    Label("Advanced", systemImage: "star")
-                }
-                .tag(Tabs.advanced)
+            Tab("General", systemImage: "gear") {
+                GeneralSettingsView()
+                    .navigationTitle("")
+            }
+            Tab("CPU", systemImage: "memorychip") {
+                CPUSettingsView()
+                    .navigationTitle("")
+            }
         }
-        .padding(20)
-        .frame(width: 375, height: 150)
+        .scenePadding()
     }
 }
 
